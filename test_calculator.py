@@ -19,5 +19,9 @@ class TestCalculator(unittest.TestCase):
         result = self.calculator.add("1,2")
         self.assertEqual(result, 1+2)
 
+    def test_add_n_string_num_returns_sum(self):
+        result = self.calculator.add("1,2,3,4,5")
+        self.assertEqual(result, 15)
+
 if __name__ == "__main__":
     unittest.main()
