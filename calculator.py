@@ -9,4 +9,9 @@ class Calculator:
         Returns:
             int: The sum of the numbers. Returns 0 if the string is empty.
         """
-        return 0
+        if numbers == "":
+            return 0
+
+        ret = int(numbers)
+
+        return ret
