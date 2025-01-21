@@ -9,13 +9,10 @@ class Calculator:
         Returns:
             int: The sum of the numbers. Returns 0 if the string is empty.
         """
-        ret = 0
 
         if not numbers:
-            return ret
+            return 0
 
-        nums = numbers.split(",")
-        for num in nums:
-            ret += int(num)
+        return sum(int(num) for num in numbers.split(",") if num)
 
-        return ret
+
