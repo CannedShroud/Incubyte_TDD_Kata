@@ -1,3 +1,5 @@
+import re
+
 class Calculator:
     def add(self, numbers: str) -> int:
         """
@@ -13,7 +15,9 @@ class Calculator:
         if not numbers:
             return 0
 
-        numbers = numbers.replace("\n", ",")
-        return sum(int(num) for num in numbers.split(",") if num)
+        delimiters = r",|\n"
+        nums = re.split(delimiters, numbers)
+
+        return sum(int(num) for num in nums if num)
 
 
