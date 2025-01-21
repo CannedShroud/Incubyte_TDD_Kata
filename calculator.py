@@ -23,6 +23,10 @@ class Calculator:
         
         nums = re.split(delimiters, numbers)
 
+        negatives = [n for n in nums if int(n) < 0]
+        if negatives:
+            raise ValueError(f"negative numbers not allowed {', '.join(negatives)}")
+
         return sum(int(num) for num in nums if num)
 
 
