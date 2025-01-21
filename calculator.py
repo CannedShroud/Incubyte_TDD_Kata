@@ -15,12 +15,13 @@ class Calculator:
         if not numbers:
             return 0
 
+        delimiters = r",|\n"
+
         if numbers.startswith("//") and "\n" in numbers:
             delimiter, numbers = numbers[2:].split("\n")
-            nums = numbers.split(delimiter)
-        else:
-            delimiters = r",|\n"
-            nums = re.split(delimiters, numbers)
+            delimiters += f"|{delimiter}"
+        
+        nums = re.split(delimiters, numbers)
 
         return sum(int(num) for num in nums if num)
 
