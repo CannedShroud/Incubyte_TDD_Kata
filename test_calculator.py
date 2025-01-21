@@ -15,5 +15,9 @@ class TestCalculator(unittest.TestCase):
         result = self.calculator.add("3")
         self.assertEqual(result, 3)
 
+    def test_add_two_string_num_returns_sum(self):
+        result = self.calculator.add("1,2")
+        self.assertEqual(result, 1+2)
+
 if __name__ == "__main__":
     unittest.main()
