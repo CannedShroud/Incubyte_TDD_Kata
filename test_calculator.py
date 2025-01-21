@@ -31,5 +31,10 @@ class TestCalculator(unittest.TestCase):
         result = self.calculator.add("//:\n1:2:3")
         self.assertEqual(result, 6)
 
+    def test_add_n_string_num_raise_if_negative(self):
+        with self.assertRaises(ValueError) as c:
+            self.calculator.add("-5,3,4,-3")
+        self.assertEqual(str(c.exception), "negative numbers not allowed -5, -3")
+
 if __name__ == "__main__":
     unittest.main()
