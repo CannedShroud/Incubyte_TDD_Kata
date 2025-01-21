@@ -27,5 +27,9 @@ class TestCalculator(unittest.TestCase):
         result = self.calculator.add("1,2\n3")
         self.assertEqual(result, 6)
 
+    def test_add_n_string_num_custom_delimter_returns_sum(self):
+        result = self.calculator.add("//:\n1:2:3")
+        self.assertEqual(result, 6)
+
 if __name__ == "__main__":
     unittest.main()
