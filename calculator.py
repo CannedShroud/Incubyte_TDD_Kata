@@ -12,6 +12,11 @@ class Calculator:
         if not numbers:
             return 0
 
+        if "," in numbers:
+            a, b = numbers.split(",") 
+            ret = int(a) + int(b)
+            return ret
+            
         ret = int(numbers)
 
         return ret
