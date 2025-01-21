@@ -14,11 +14,8 @@ class Calculator:
         if not numbers:
             return ret
 
-        if "," in numbers:
-            a, b = numbers.split(",") 
-            ret = int(a) + int(b)
-           
-        else: 
-            ret = int(numbers)
+        nums = numbers.split(",")
+        for num in nums:
+            ret += int(num)
 
         return ret
