@@ -20,11 +20,11 @@ class Calculator:
         if numbers.startswith("//") and "\n" in numbers:
             delimiter, numbers = numbers[2:].split("\n")
             delimiters += f"|{delimiter}"
-        
+
         nums = re.split(delimiters, numbers)
 
-        negatives = [n for n in nums if int(n) < 0]
-        if negatives:
+        if "-" in numbers and "-" not in delimiters:
+            negatives = [n for n in nums if int(n) < 0]
             raise ValueError(f"negative numbers not allowed {', '.join(negatives)}")
 
         return sum(int(num) for num in nums if num)
